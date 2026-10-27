@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --background: #0b1120;
+  --card: #151f32;
+  --input: #0f172a;
+  --text: #e5edf9;
+  --muted: #94a3b8;
+  --border: #29364b;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  padding: 32px 18px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #172554, #1d4ed8, #0891b2);
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+header p {
+  margin: 0;
+  color: #dbeafe;
+}
+
+/* Kontainer utama */
+.container {
+  width: min(900px, 92%);
+  margin: 28px auto;
+}
+
+/* Kartu kalkulator */
+.card {
+  padding: 24px;
+  margin-bottom: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #00000020;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: #3b82f680;
+  transform: translateY(-2px);
+}
+
+h2 {
+  margin-top: 0;
+  color: #60a5fa;
+  font-size: 22px;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* Label input */
+label {
+  display: block;
+  margin: 16px 0 7px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* Input dan pilihan */
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  color: var(--text);
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #3b82f626;
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+/* Tombol */
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px 16px;
+  color: white;
+  background: var(--primary);
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Hasil perhitungan */
+.result {
+  display: none;
+  margin-top: 18px;
+  padding: 16px;
+  color: #dbeafe;
+  background: #102b3b;
+  border: 1px solid #164e63;
+  border-radius: 10px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.result strong {
+  color: var(--success);
+}
+
+/* Pesan error */
+.error {
+  color: #fecaca;
+  background: #3b171d;
+  border-color: #7f1d1d;
+}
+
+/* Riwayat perhitungan */
+.history-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+footer {
+  padding: 24px 16px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+  header {
+    padding: 26px 14px;
+  }
+
+  header h1 {
+    font-size: 27px;
+  }
+
+  .container {
+    width: 94%;
+    margin: 18px auto;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 13px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 16px;
+  }
+}
